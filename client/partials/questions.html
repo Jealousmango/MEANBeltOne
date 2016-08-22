@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answers</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="question in questions">
+      <td>{{question.title}}</td>
+      <!-- <td>{{question.description}}</td> -->
+      <td>0</td>
+      <td>
+        <a href="#/show">Show</a>
+        <a href="#/answer">Answer</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div ng-model='questions'>
+  <h3>Add a new Question</h3>
+  <form>
+    Question: <input type="text"> <br>
+    Description: <input type="textfield"><br>
+    <button ng-click="createQuestion()">Enter</button>
+  </form>
+</div>
