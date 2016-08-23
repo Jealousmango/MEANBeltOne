@@ -11,6 +11,7 @@ app.controller('usersController', function($scope, sessionFactory, userFactory, 
 
   $scope.login = function(){
     userFactory.login($scope.user, function(data) {
+      console.log("hello2");
       sessionFactory.getSession(function(session){
         $location.url('/questions');
       });

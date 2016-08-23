@@ -1,11 +1,11 @@
 app.controller('questionsController', function($scope, sessionFactory, questionFactory, $location) {
   $scope.questions = [];
-  // $scope.newQuestion = {
-  //   title: '',
-  //   description: '',
-  //   question_id: '',
-  //   user_id: ''
-  // };
+  $scope.newQuestion = {
+    title: '',
+    description: '',
+    question_id: '',
+    user_id: ''
+  };
 
   //check if session variable is set
   if (!sessionFactory.session) {
@@ -16,13 +16,16 @@ app.controller('questionsController', function($scope, sessionFactory, questionF
     })
   };
 
-  $scope.createQuestion = function(newQuestion, title) {
-		newQuestion.title = title.title;
-    newQuestion.description = description.description;
-    newQuestion.question_id = question_id;
-		newQuestion.user_id = name._id;
-  	questionFactory.createQuestion(newQuestion, function(data) {
-
+  $scope.createQuestion = function(questionInput, descriptionInput) {
+		$scope.newQuestion.title = questionInput;
+    $scope.newQuestion.description = descriptionInput;
+    // newQuestion.question_id = question_id;
+		// newQuestion.user_id = name._id;
+  	questionFactory.createQuestion($scope.newQuestion, function(data) {
+      console.log(data);
+      questionFactory.index(function(questions) {
+        $scope.questions = questions;
+      });
 		})
 	}
 

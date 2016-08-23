@@ -6,5 +6,10 @@ app.factory('questionFactory', function($http) {
       cb(data);
     });
   };
+  factory.createQuestion = function(newQuestion, cb) {
+    $http.post('/questions', newQuestion).success(function(data){
+      cb(data);
+    });
+  };
   return factory;
 });

@@ -18,11 +18,11 @@
     </tr>
   </tbody>
 </table>
-<div ng-model='questions'>
+<div>
   <h3>Add a new Question</h3>
   <form>
-    Question: <input type="text"> <br>
-    Description: <input type="textfield"><br>
-    <button ng-click="createQuestion()">Enter</button>
+    Question: <input ng-model='questionInput' type="text"> <br>
+    Description: <input ng-model='descriptionInput' type="textfield"><br>
+    <button ng-click="createQuestion(questionInput, descriptionInput)">Enter</button>
   </form>
 </div>
