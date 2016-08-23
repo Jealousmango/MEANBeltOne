@@ -16,5 +16,6 @@ module.exports = function(app) {
     app.get('/answers', answers.index);
     app.post('/answers', answers.create);
     app.get('/answers/:_id/upvote', answers.upvote);
-    app.get('/show', questions.find(_id))
+    // app.get('/show', questions.find(question_id))
+    // app.get('/show', questions.index)
 }

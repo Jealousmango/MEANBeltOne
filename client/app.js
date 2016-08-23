@@ -10,5 +10,10 @@ app.config(function($routeProvider){
       templateUrl: 'partials/questions.html',
       controller: 'questionsController'
     })
+    .when('/question/:_id', {
+      templateUrl: 'partials/question.html',
+      controller: 'questionController'
+    })
     .otherwise('/');
+
 });

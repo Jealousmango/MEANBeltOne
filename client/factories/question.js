@@ -11,5 +11,10 @@ app.factory('questionFactory', function($http) {
       cb(data);
     });
   };
+  factory.find = function(question_id, cb) {
+    $http.get('/questions/'+ question_id).success(function(data){
+      cb(data);
+    });
+  }
   return factory;
 });
