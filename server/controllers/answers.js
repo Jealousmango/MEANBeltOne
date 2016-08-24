@@ -14,7 +14,6 @@ module.exports = {
   upvote : function(req, res) {
     Answer.update({ _id : req.params._id }, { $inc : { upvotes : 1 } }, function(err, updated) {
       if (err) return res.send(err);
-
       res.send({success : true});
     });
   },

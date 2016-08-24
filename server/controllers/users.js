@@ -3,7 +3,6 @@ var User = mongoose.model('users');
 module.exports = {
   session : function(req, res) {
     if (!req.session.userId) return res.send({ error : 'not_logged_in'});
-
     return res.send({ userId : req.session.userId, name : req.session.name });
   },
   index : function(req, res) {
@@ -25,7 +24,6 @@ module.exports = {
           return res.send(existingUser);
         });
       }
-
       req.session.name = newUser.name;
       req.session.userId = newUser._id;
       return res.send(newUser);

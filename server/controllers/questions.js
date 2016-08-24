@@ -6,7 +6,6 @@ module.exports = {
   index : function(req, res) {
     Question.find(function(err, questions) {
       if (err) return res.send(err);
-
       res.send(questions);
     });
   },
@@ -16,7 +15,6 @@ module.exports = {
       .populate('_answers _user')
       .exec(function(err, question) {
         if (err) return res.send(err);
-
         res.send(question);
     });
   },

@@ -1,6 +1,6 @@
 app.factory('answerFactory', function($http) {
   var factory = {};
-
+  console.log('answerFactory hit');
   factory.index = function(cb) {
     $http.get('/answers').success(function(data){
       cb(data);
@@ -11,8 +11,8 @@ app.factory('answerFactory', function($http) {
       cb(data);
     });
   };
-  factory.find = function(question_id, cb) {
-    $http.get('/answers/'+ answer_id).success(function(data){
+  factory.find = function(answer_id, cb) {
+    $http.get('/answers').success(function(data){
       cb(data);
     });
   }

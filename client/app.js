@@ -18,6 +18,10 @@ app.config(function($routeProvider){
       templateUrl: 'partials/answer.html',
       controller: 'answerController'
     })
+    .when('/answers', {
+      templateUrl: 'partials/answer.html',
+      controller: 'answersController'
+    })
     .otherwise('/');
 
 });
