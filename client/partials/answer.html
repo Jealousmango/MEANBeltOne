@@ -1,0 +1,7 @@
+<h1> {{question.title}} </h1>
+<h3> {{question.description}}</h3>
+<form>
+    Your Answer: <input ng-model='answerInput' type="textarea">
+    Supporting Details: <input ng-model='supportingInput' type="textarea">
+    <button ng-click="createAnswer(answerInput, supportingInput)">Submit</button>
+</form>

@@ -1,2 +1,7 @@
-<p> {{question.title}} </p>
-<p> {{question.description}} </p>
+<h1> {{question.title}} </h1>
+<h3> {{question.description}} </h3>
+<p ng-repeat="answer in answers">
+    <p>{{answer.message}}</p>
+    <p>{{answer.upvotes}}</p>
+    <a href="#/upvote">Upvote!</a>
+</p>
